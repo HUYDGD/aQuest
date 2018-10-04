@@ -1,0 +1,66 @@
+---
+getQuest: '§r§aTên nhiệm vụ: §c§l> §r§e{quest} §l§c<§r'
+getQuestInfo: '§r§aNhiệm vụ: §f{type} §a{count} §2{target}'
+questEnded: '§r§aBạn đã hoàn thành tất cả nhiệm vụ của máy chủ! Xin chúc mừng!'
+questNotExist: '§r§aNhiệm vụ không hề tồn tại. Sử dụng lệnh /quest để xem danh sách nhiệm vụ.'
+questHelp: '§r§aTên nhiệm vụ: §c§l> §r§e{quest} §l§c<§r\n§r§aNhiệm vụ bạn cần làm: §f{type} §a{count} §2{target}'
+questEnd: '§r§aChúc mừng! Bạn đã hoàn thành nhiệm vụ §e{quest}§a. Phần thưởng của bạn: §b{count} {award}§a!'
+
+# Tất cả các nhiệm vụ có thể có:
+# blockBreak
+# blockPlace
+# Nếu bạn cần blockBreak hoặc blockPlace - Hãy viết tất cả
+# playerKill
+# playerDeath
+# itemConsume
+# itemDrop
+
+# Config mẫu:
+#quests:
+  #- name: Nhiệm Vụ Đầu Tiên # tên nhiệm vụ
+    #task: blockBreak # loại nhiệm vụ
+    #target: block đá # mục tiêu hoàn thành
+    #id: 1 # id vật phẩm
+    #num: 5 # số lượng vật phẩm
+    #award:
+      #id: money # loại phần thưởng, có 3 loại: money, other, damage
+      #count: 1000 # số lượng
+      #name: coins # tên của phần thưởng
+quests:
+  - name: Nhiệm Vụ Đầu Tiên 
+    task: blockBreak 
+    target: block đá 
+    id: 1 
+    num: 10
+    award:
+      id: money 
+      count: 1000
+      name: coins
+  - name: Nhiệm Vụ Thứ 2
+    task: blockPlace 
+    target: block đá
+    id: 1 
+    num: 10
+    award:
+      id: money 
+      count: 1000
+      name: coins
+  - name: Nhiệm Vụ Thứ 3
+    task: itemDrop 
+    target: block diamonds
+    id: 57
+    num: 10
+    award:
+      id: money 
+      count: 1000
+      name: coins
+  - name: Nhiệm Vụ Thứ 4
+    task: itemConsume 
+    target: golden apple
+    id: 322
+    num: 2
+    award:
+      id: money 
+      count: 1000
+      name: coins
+...

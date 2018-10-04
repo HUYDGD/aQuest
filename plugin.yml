@@ -1,0 +1,11 @@
+name: QuestPMMP
+main: AlexBrin\Main
+version: 0.2
+api: 3.0.0
+author: Gamchik
+fixer: GamerSoiCon
+
+commands:
+  quest:
+    description: Lệnh chính của QuestPMMP!
+    default: true
