@@ -1,6 +1,6 @@
 ---
-name: 'Issue: Crash'
-about: Report a crash in aQuest. If this doesn’t look right, choose a different type.
+name: 'Crash'
+about: Report a crash in aQuest.
 title: ''
 labels: ''
 assignees: ''
