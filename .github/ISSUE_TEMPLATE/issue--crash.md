@@ -1,5 +1,5 @@
 ---
-name: 'Crash'
+name: Crash
 about: Report a crash in aQuest.
 title: ''
 labels: ''
