@@ -18,7 +18,7 @@
 		public function onEnable() {
 			$folder = $this->getDataFolder();
 			if(!is_dir($folder))
-				@mkdir($folder);
+			@mkdir($folder);
 			$this->saveDefaultConfig();
 			$this->config = (new Config($folder.'config.yml', Config::YAML))->getAll();
 			$this->users = (new Config($folder.'users.yml', Config::YAML))->getAll();
@@ -31,13 +31,16 @@
 				if(strtolower($command->getName()) == 'quest') {
 					$name = strtolower($sender->getName());
 					$num = $this->users[$name]['complete'];
-					$quest = $this->config['quests'][$num];
+					if($num == 0){
+						$quest = $this->config['quests'][$num];
+						$sender->sendMessage("§cKhông tìm thấy nhiệm vụ");
+					}
 					if($this->users[$name]['during'] !== false) {
 						$sender->sendMessage(str_replace(['\n', '{quest}', '{type}', '{target}', '{count}'], ["\n", $quest['name'], $this->getTypeQuest($quest['task']), $quest['target'], $quest['num']], $this->config['questHelp']));
 						return false;
 					}
 					if($num >= count($this->config['quests'])) {
-						$sender->sendMessage($config['questEnded']);
+						$sender->sendMessage($this->config['questEnded']);
 						return false;
 					}
 					$this->users[$name]['during'] = [
@@ -48,7 +51,7 @@
 					$sender->sendMessage(str_replace('{quest}', $quest['name'], $this->config['getQuest']));
 					$sender->sendMessage(str_replace(['\n', '{type}', '{target}', '{count}'], ["\n", $this->getTypeQuest($quest['task']), $quest['target'], $quest['num']], $this->config['getQuestInfo']));
 				}
-			} else $sender->sendMessage('§cKhông thể sử dụng lệnh!');
+			} else $sender->sendMessage("§cKhông thể sử dụng lệnh");
 			return false;
 		}
 
@@ -76,7 +79,7 @@
 					break;
 
 				case 'itemconsume':
-						$type = 'Ăn/uống';
+						$type = 'Tiêu thụ';
 					break;
 
 				case 'itemdrop':
@@ -97,5 +100,3 @@
 		}
 
 	}
-
-?>

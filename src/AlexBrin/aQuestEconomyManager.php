@@ -16,9 +16,9 @@
 			$this->eco = $pManager->getPlugin("EconomyAPI") ?? $pManager->getPlugin("PocketMoney") ?? $pManager->getPlugin("MassiveEconomy") ?? null;
 			unset($pManager);
 			if($this->eco === null)
-				$plugin->getLogger()->warning('Không tìm thấy PocketMoney, MassiveEconomy và EconomyAPI!');
+				$plugin->getLogger()->warning("Không tìm thấy PocketMoney, MassiveEconomy và EconomyAPI!");
 			else
-				$plugin->getLogger()->info('§aĐã tìm thấy: §d'.$this->eco->getName());
+				$plugin->getLogger()->info("§aĐã tìm thấy: §d". $this->eco->getName() ."");
 		}
 
 		public function giveMoney($player, $amount) {

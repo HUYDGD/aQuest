@@ -38,7 +38,7 @@
 					'complete' => 0
 				];
 				$this->plugin->save();
-				$this->plugin->getLogger()->info("§eNgười chơi $name đã được thêm vào data của QuestPMMP!");
+				$this->plugin->getLogger()->info("§eĐã thêm §f". $name ." §evào data");
 			}
 		}
 

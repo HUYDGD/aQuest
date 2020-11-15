@@ -1,11 +1,11 @@
-name: QuestPMMP
+name: aQuest
 main: AlexBrin\Main
 version: 0.2
-api: 3.0.0
+api: 3.15.4
 author: Gamchik
-fixer: GamerSoiCon
+fixer: SoiOniichan
 
 commands:
   quest:
-    description: Lệnh chính của QuestPMMP!
+    description: Xem nhiệm vụ hiện tại
     default: true
