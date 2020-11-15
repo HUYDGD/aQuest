@@ -18,7 +18,7 @@
 			if($this->eco === null)
 				$plugin->getLogger()->warning("Không tìm thấy PocketMoney, MassiveEconomy và EconomyAPI!");
 			else
-				$plugin->getLogger()->info("§aĐã tìm thấy: §d". $this->eco->getName() ."");
+				$plugin->getLogger()->info("§aĐã tìm thấy: §d". $this->eco->getName());
 		}
 
 		public function giveMoney($player, $amount) {
